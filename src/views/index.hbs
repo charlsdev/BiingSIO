@@ -1,0 +1,82 @@
+      <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" type="text/css">
+      <link rel="stylesheet" href="/boxicons/boxicons.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/index.min.css">
+   </head>
+
+   <body>
+
+      <header class="header">
+         <div class="header__container">
+            <img src="/img/BiingSIO.png" alt="" class="header__img">
+            <div class="header__logo">
+               #JuntosSomosMás
+            </div>
+         </div>
+      </header>
+      
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 tittle">
+               <div class="pharafrase">
+                  Rifa "Todos podemos"
+               </div>
+            </div>
+         </div>
+
+         <div class="row">
+            <button type="button" class="btnGeneral register">
+               <i class='bx bx-user bx-tada' style="margin-right: 7px;"></i> 
+               Añadir
+            </button>
+         </div>
+
+         <div class="row">
+            {{#if boletos}}
+               {{#lenghtArray boletos}}
+               {{/lenghtArray}}
+            {{/if}}
+            
+            {{#forLoop 100}}
+               {{#isEqual this}}
+                  <div class="col-md-2">
+                     <div class="cuadrito vendido C{{../this}}" onclick="searchData('{{../this}}');">
+                        <div class="number">
+                           {{#chart ../this}}{{/chart}}
+                        </div>
+
+                        <div class="vendedor">
+                           Vendido
+                        </div>
+                     </div>
+                  </div>
+               {{else}}
+                  <div class="col-md-2">
+                     <div class="cuadrito C{{../this}}" onclick="searchData('{{../this}}');">
+                        <div class="number">
+                           {{#chart ../this}}{{/chart}}
+                        </div>
+
+                        <div class="vendedor">
+                           Sin vender
+                        </div>
+                     </div>
+                  </div>
+               {{/isEqual}}
+            {{/forLoop}}
+         </div>
+      </div>
+
+      <div class="footer">
+         Creado por <b>CharlsDEV</b> || © Todos los derechos reservados.
+      </div>
+
+      {{> modalAdd}}
+      {{> modalList}}
+
+      <script src="/JQuery/jquery.min.js"></script>
+      <script src="/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/sweetalert2/sweetalert2.min.js"></script>
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/socketIO.min.js"></script>

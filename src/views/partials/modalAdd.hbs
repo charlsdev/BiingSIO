@@ -1,0 +1,70 @@
+<div
+   class="modal fade"
+   id="modalAddBoleto"
+   data-backdrop="static"
+   data-keyboard="false"
+   tabindex="-1"
+   aria-labelledby="staticBackdropLabel"
+   aria-hidden="true"
+>
+   <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+         <div class="modal-header timeHeader">
+            <button type="button" class="btn btn-sm bC" data-dismiss="modal">
+               <i class='bx bx-x-circle bx-tada' ></i>
+            </button>
+
+            <h5 class="modal-title" id="staticBackdropLabel">Registrar boleto</h5>
+
+            <img src="/img/BiingSIO.png" alt="VLP Unesum" />
+         </div>
+
+         <div class="modal-body timeBody">
+            <form id="formAdd">
+               <div class="form-group">
+                  <label for="">Apellidos</label>
+                  <input type="text" class="form-control" id="apellidos" placeholder="Ingrese el apellido">
+               </div>
+
+               <div class="form-group">
+                  <label for="">Nombres</label>
+                  <input type="text" class="form-control" id="nombres" placeholder="Ingrese el nombre">
+               </div>
+
+               <div class="form-group">
+                  <label for="">Teléfono</label>
+                  <input type="number" class="form-control" id="telefono" placeholder="Ingrese el numero de teléfono">
+               </div>
+
+               <div class="form-group">
+                  <label for=""># de Boleto</label>
+                  <input type="number" class="form-control" id="numBoleto" placeholder="Ingrese el numero de boleto">
+               </div>
+
+               <div class="form-group">
+                  <label for="">Vendedor</label>
+                  <select class="form-control" id="vendedor">
+                     <option selected disabled value="">Seleccione su nombre...</option>
+                     <option value="CarlosVP">CarlosVP</option>
+                     <option value="NicolM">NicolM</option>
+                     <option value="RashelM">RashelM</option>
+                     <option value="DannyS">DannyS</option>
+                     <option value="DavidV">DavidV</option>
+                     <option value="SebastianN">SebastiánN</option>
+                     <option value="XiomaraBP">XiomaraBP</option>
+                     <option value="VictorFC">VictorFC</option>
+                     <option value="MaferL">MaferL</option>
+                  </select>
+               </div>
+
+               <hr>
+
+               <button type="submit" class="btnGeneral add float-right">
+                  <i class='bx bx-add-to-queue bx-tada' style="margin-right: 7px;" ></i>
+                  Guardar
+               </button>
+            </form>            
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,173 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-weight: bold !important;
+   font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+	background-color: var(--bodyColor);
+}
+
+/* Header */
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: var(--verdeHojaBajo);
+   box-shadow: 0 1px 0 rgba(22, 8, 43, 0.1);
+   padding: 0 5rem;
+   z-index: 100;
+}
+
+.header__container {
+   display: flex;
+   align-items: center;
+   height: 3.5rem;
+   justify-content: end;
+}
+
+.header__img {
+   width: 50px;
+   margin-right: 1.5rem;
+}
+.header__logo {
+   color: var(--negro);
+   font-weight: 600;
+   display: block;
+}
+
+/* Container */
+.container {
+   margin-top: 45px;
+   margin-bottom: 25px;
+}
+
+.tittle {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 25px 5px 5px 5px;
+}
+
+.tittle .pharafrase {
+   font-size: 1.55rem;
+   text-transform: uppercase;
+   font-weight: 600;
+   color: var(--title-color);
+   letter-spacing: .5px;
+}
+
+.btnGeneral {
+   width: 150px;
+   font-size: .9rem;
+   padding: 6px 1px;
+   margin: 0 15px;
+   border-radius: 1.5rem;
+   font-weight: 600;
+   background: var(--transparentColor);
+   transition: .3s;
+}
+
+.btnGeneral.register {
+   margin: 10px 5px 20px 15px;
+   border: 1px solid hsl(0, 67%, 62%);
+   color: hsl(0, 48%, 22%);
+}
+
+.btnGeneral.register:hover {
+   color: var(--blanco);
+   background: hsl(0, 79%, 68%);
+   transition: .3s;
+}
+
+.btnGeneral.add {
+   border: 1px solid hsl(207, 67%, 62%);
+   color: hsl(214, 48%, 22%);
+}
+
+.btnGeneral.add:hover {
+   color: var(--blanco);
+   background: hsl(207, 79%, 68%);
+   transition: .3s;
+}
+
+.btnGeneral:focus {
+   outline: none;
+   box-shadow: none;
+}
+
+.cuadrito {
+	border:  1px solid var(--ash);
+	border-radius: .5rem;
+	margin: 5px;
+   background-color: var(--libre);
+   cursor: pointer;
+}
+
+.cuadrito .number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.9rem;
+}
+
+.cuadrito .vendedor {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: .79rem;
+}
+
+.cuadrito.vendido{
+	border:  2px dotted var(--ash);
+	background-color: var(--vendido);
+}
+
+/* Modal */
+.modal-dialog-scrollable .modal-content .modal-header {
+   width: 100% !important;
+   align-items: center !important;
+   padding-bottom: 0.8rem !important;
+   margin: auto 0 !important;
+   text-transform: uppercase;
+}
+
+.modal-dialog-scrollable .modal-content .modal-header .bC {
+   color: var(--azulOscuro) !important;
+   font-weight: 300 !important;
+   width: auto !important;
+   font-size: 0.8rem !important;
+   box-shadow: none !important;
+}
+
+.modal-dialog-scrollable .modal-content .modal-header .bC i{
+   font-size: 1.85rem;
+}
+
+.modal-dialog-scrollable .modal-content .modal-header img {
+   width: 40px !important;
+   height: 40px !important;
+   margin: 0 10px;
+}
+
+label {
+   font-size: .9rem !important;
+   text-transform: uppercase;
+}
+
+input, select, option {
+   font-weight: 500 !important;
+   font-size: .8rem !important;
+}
+
+/* Footer */
+.footer {
+   background: #f9f9f9;
+   color: #333;
+   font-size: 1rem;
+   padding: .5rem 1rem;
+   text-align: center;
+}
