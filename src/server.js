@@ -1,15 +1,9 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
-// const morgan = require('morgan');
-// const { Server } = require('socket.io');
-// const http = require('http');
 
 //Inicializaciones
 const app = express();
-
-// const httpServer = http.createServer(app);
-// const io = new Server(httpServer);
 
 //Configuraciones
 app.set('port', process.env.PORT || 4000);
@@ -30,11 +24,6 @@ app.use(express.urlencoded({extended: false}));
 
 //Rutas
 app.use(require('./routes/index.routes'));
-
-// Config SocketIO
-// io.on('connection', (socket) => {
-//    console.log('a user connected');
-// });
 
 //Archivos estáticos
 app.use(express.static(path.join(__dirname + '/public')));

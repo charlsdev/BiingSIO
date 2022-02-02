@@ -1,4 +1,3 @@
-
 const UsuarioModel = require('./models/Users');
 
 module.exports = (io) => {
