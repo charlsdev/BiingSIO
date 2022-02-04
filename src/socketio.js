@@ -33,8 +33,11 @@ module.exports = (io) => {
                const resp = await newVenta.save();
    
                if (resp) {
-                  // Emitir respuesta a todos los clientes [sockets]
-                  io.sockets.emit('server:gen', resp);
+                  // Emitir respuesta a todos los clientes [sockets], incluyendo al que emitio
+                  // io.sockets.emit('server:gen', resp);
+                  
+                  // Emitir respuesta a todos los clientes [sockets], excepto al que emitio
+                  socket.broadcast.emit('server:gen', resp);
    
                   // Emitir respuesta al mismo cliente
                   socket.emit('server:resp', {
