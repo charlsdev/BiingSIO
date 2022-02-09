@@ -5,7 +5,6 @@
 ) {
    position: fixed;
    z-index: 9999;
-   /* background: var(--blanco); */
    left: 0px;
    top: 0px;
    width: 100%;
@@ -17,7 +16,7 @@
 }
 
 .loader-wrapperSend {
-   background: var(--bodyColor);
+   background: var(--blanco);
 }
 
 .loader-circle {
@@ -29,7 +28,7 @@
    transform: translate(-50%, -50%);
    border-radius: 50%;
    border: 5px solid var(--blanco);
-   box-shadow: 0 0 0 5px var(--verdeOscuro);
+   box-shadow: 0 0 0 5px var(--azulSuave);
    overflow: hidden;
 }
 
@@ -37,7 +36,7 @@
    position: relative;
    width: 100%;
    height: 100%;
-   background: var(--verdeOscuro);
+   background: var(--azulSuave);
    border-radius: 50%;
    box-shadow: inset 0 0 50px var(--bodyColor);
 }
