@@ -21,31 +21,37 @@ module.exports = (io) => {
                   msg: 'uso'
                });
             } else {
-               const newVenta = new UsuarioModel({
-                  apellidos: data.apellidos,
-                  nombres: data.nombres,
-                  telefono: data.telefono,
-                  numBoleto: data.numBoleto,
-                  vendedor: data.vendedor
-               });
-               // console.log(newVenta);
-   
-               const resp = await newVenta.save();
-   
-               if (resp) {
-                  // Emitir respuesta a todos los clientes [sockets], incluyendo al que emitio
-                  // io.sockets.emit('server:gen', resp);
-                  
-                  // Emitir respuesta a todos los clientes [sockets], excepto al que emitio
-                  socket.broadcast.emit('server:gen', resp);
-   
-                  // Emitir respuesta al mismo cliente
-                  socket.emit('server:resp', {
-                     msg: true
+               if (data.numBoleto >= 0 && data.numBoleto <= 99) {
+                  const newVenta = new UsuarioModel({
+                     apellidos: data.apellidos,
+                     nombres: data.nombres,
+                     telefono: data.telefono,
+                     numBoleto: data.numBoleto,
+                     vendedor: data.vendedor
                   });
+                  // console.log(newVenta);
+      
+                  const resp = await newVenta.save();
+      
+                  if (resp) {
+                     // Emitir respuesta a todos los clientes [sockets], incluyendo al que emitio
+                     // io.sockets.emit('server:gen', resp);
+                     
+                     // Emitir respuesta a todos los clientes [sockets], excepto al que emitio
+                     socket.broadcast.emit('server:gen', resp);
+      
+                     // Emitir respuesta al mismo cliente
+                     socket.emit('server:resp', {
+                        msg: true
+                     });
+                  } else {
+                     socket.emit('server:resp', {
+                        msg: false
+                     });
+                  }
                } else {
                   socket.emit('server:resp', {
-                     msg: false
+                     msg: 'not'
                   });
                }
             }
