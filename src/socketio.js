@@ -15,7 +15,7 @@ module.exports = (io) => {
                   numBoleto: 1
                })
                .lean();
-               
+
             if (boletoS) {
                socket.emit('server:resp', {
                   msg: 'uso'
@@ -30,16 +30,16 @@ module.exports = (io) => {
                      vendedor: data.vendedor
                   });
                   // console.log(newVenta);
-      
+
                   const resp = await newVenta.save();
-      
+
                   if (resp) {
                      // Emitir respuesta a todos los clientes [sockets], incluyendo al que emitio
                      // io.sockets.emit('server:gen', resp);
-                     
+
                      // Emitir respuesta a todos los clientes [sockets], excepto al que emitio
                      socket.broadcast.emit('server:gen', resp);
-      
+
                      // Emitir respuesta al mismo cliente
                      socket.emit('server:resp', {
                         msg: true
@@ -76,8 +76,6 @@ module.exports = (io) => {
                vendedor: 1,
             })
             .lean();
-
-         console.log(boletoS);
 
          socket.emit('server:searchboleto', boletoS);
       });
